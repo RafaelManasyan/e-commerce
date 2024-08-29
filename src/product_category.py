@@ -1,6 +1,6 @@
-
 class Product:
     """Product creating class"""
+
     name: str
     description: str
     price: float
@@ -15,6 +15,7 @@ class Product:
 
 class Category:
     """Category creating class"""
+
     name: str
     description: str
     products: list
