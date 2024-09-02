@@ -1,6 +1,6 @@
 # E-commerce project
 ## Modules
-The project consists of two modules: main.py and product_category.py, and tests for them
+The project consists of two modules: main.py and product_category.py, and tests for them with fixtures
 ## How it works?
 Product and category classes are created by specified parameters when calling the function
 ```chatinput
