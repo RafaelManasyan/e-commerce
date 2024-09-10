@@ -17,4 +17,3 @@ def test_adding_product(product_samsung, product_iphone):
 def test_str_product(product_samsung):
     prod_str = str(product_samsung)
     assert prod_str == "Samsung Galaxy S23 Ultra, 180000.0 руб. Остаток: 5 шт."
-    
