@@ -51,3 +51,5 @@ if __name__ == "__main__":
 
     print(Category.category_count)
     print(Category.product_count)
+
+    print(product1 + product2)
