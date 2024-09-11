@@ -7,3 +7,13 @@ def test_init_cat(category_smartphones):
     assert category_smartphones.name == "Смартфоны"
     assert category_smartphones.category_count == 1
     assert category_smartphones.product_count == 3
+
+
+def test_adding_product(product_samsung, product_iphone):
+    prod_sum = product_iphone + product_samsung
+    assert prod_sum == 2580000.0
+
+
+def test_str_product(product_samsung):
+    prod_str = str(product_samsung)
+    assert prod_str == "Samsung Galaxy S23 Ultra, 180000.0 руб. Остаток: 5 шт."
