@@ -31,6 +31,6 @@ def test_check_prod_before_adding(category_smartphones):
     with pytest.raises(TypeError):
         assert category_smartphones.add_product("smartphone3") == TypeError
 
-        
+
 def test_mixin(product_samsung):
     assert str(product_samsung) == 'Samsung Galaxy S23 Ultra, 180000.0 руб. Остаток: 5 шт.'
