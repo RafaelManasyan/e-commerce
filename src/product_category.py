@@ -52,7 +52,7 @@ class Product(BaseProduct, InfoMixin):
         else:
             print("Цена не должна быть нулевая или отрицательная")
 
-    def __str__(self):
+    def __repr__(self):
         return f"{self.name}, {self.__price} руб. Остаток: {self.quantity} шт."
 
     def __add__(self, other):
