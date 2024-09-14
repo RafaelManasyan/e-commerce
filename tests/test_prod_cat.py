@@ -37,4 +37,4 @@ def test_mixin(product_samsung):
 
 
 def test_zero_division(category_empty):
-    assert category_empty.middle_price() == 'Category have no products'
+    assert category_empty.middle_price() == 0

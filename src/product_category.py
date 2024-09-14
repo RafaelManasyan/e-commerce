@@ -115,7 +115,7 @@ class Category:
             middle_price = round(sum(avg_price_of_prod) / len(avg_price_of_prod), 2)
             return middle_price
         except ZeroDivisionError:
-            return 'Category have no products'
+            return 0
 
     def add_product(self, product: Product):
         if isinstance(product, Product):
