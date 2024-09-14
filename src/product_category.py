@@ -28,7 +28,10 @@ class Product(BaseProduct, InfoMixin):
         self.name = name
         self.description = description
         self.__price = price
-        self.quantity = quantity
+        if quantity > 0:
+            self.quantity = quantity
+        else:
+            raise ValueError('Товар с нулевым количеством не может быть добавлен')
         super().__init__()
 
     @classmethod
@@ -105,6 +108,14 @@ class Category:
         self.__products = products
         Category.category_count += 1
         Category.product_count += len(products)
+
+    def middle_price(self):
+        try:
+            avg_price_of_prod = list(product.price for product in self.__products)
+            middle_price = round(sum(avg_price_of_prod) / len(avg_price_of_prod), 2)
+            return middle_price
+        except ZeroDivisionError:
+            return 'Category have no products'
 
     def add_product(self, product: Product):
         if isinstance(product, Product):
