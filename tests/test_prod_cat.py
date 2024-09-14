@@ -34,3 +34,7 @@ def test_check_prod_before_adding(category_smartphones):
 
 def test_mixin(product_samsung):
     assert repr(product_samsung) == 'Samsung Galaxy S23 Ultra, 180000.0 руб. Остаток: 5 шт.'
+
+
+def test_zero_division(category_empty):
+    assert category_empty.middle_price() == 'Category have no products'

@@ -31,3 +31,8 @@ def category_smartphones():
         "Смартфоны, как средство не только коммуникации, но и получения дополнительных функций для удобства жизни",
         ["product1", "product2", "product3"],
     )
+
+
+@pytest.fixture
+def category_empty():
+    return Category("Пустая категория", "Категория без продуктов", [])
