@@ -1,4 +1,22 @@
-class Product:
+from abc import ABC, abstractmethod
+
+
+class BaseProduct(ABC):
+
+    @abstractmethod
+    def __init__(self):
+        pass
+
+
+class InfoMixin:
+    def __init__(self):
+        print(repr(self))
+
+    def __repr__(self):
+        return f'{self.__class__.__name__}({self.name}, {self.description}, {self.price}, {self.quantity})'
+
+
+class Product(BaseProduct, InfoMixin):
     """Product creating class"""
 
     name: str
@@ -11,6 +29,7 @@ class Product:
         self.description = description
         self.__price = price
         self.quantity = quantity
+        super().__init__()
 
     @classmethod
     def new_product(cls, product_dict):
@@ -33,7 +52,7 @@ class Product:
         else:
             print("Цена не должна быть нулевая или отрицательная")
 
-    def __str__(self):
+    def __repr__(self):
         return f"{self.name}, {self.__price} руб. Остаток: {self.quantity} шт."
 
     def __add__(self, other):
